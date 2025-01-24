@@ -1,0 +1,15 @@
+.left-container {
+  background: linear-gradient(
+    to right,
+    rgb(var(--v-theme-red-accent-2)),
+    rgb(var(--v-theme-red-lighten-2))
+  );}
+
+.image-below-phone {
+  background-image: url("../../assets/login/Ellipse1.png");
+  background-size: 100% 100%; /* Faz a imagem preencher toda a largura e altura */
+  background-position: center; /* Centraliza a imagem no container */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  width: 100%;
+  height: 300px;
+}
