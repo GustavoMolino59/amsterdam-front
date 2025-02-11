@@ -3,6 +3,22 @@
     fluid
     class="h-100 pa-0 "
   >
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      :color="theme"
+    >
+      {{ snackBarText }}
+
+      <template #actions>
+        <v-btn
+          variant="text"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
     <v-row
       class="h-100 "
       no-gutters
@@ -92,7 +108,10 @@
           <h1 class="text-center text-h3 font-weight-bold">
             Cadastrar Morador
           </h1>
-          <v-form @submit.prevent="submit">
+          <v-form 
+            ref="formRef"
+            @submit.prevent="submit" 
+          >
             <div class="d-flex flex-column pa-3">
               <v-row>
                 <v-col cols="8">
@@ -110,6 +129,7 @@
                     v-model="year"
                     label="Ano"
                     variant="outlined"
+                    :rules="[required]"
                     :items="[2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
                   />
                 </v-col>
@@ -154,14 +174,15 @@
           </v-form>
         </v-container>
         <div class="image-below-phone d-flex flex-column justify-center ga-10 pa-3 d-md-none">
-          <span class="text-white">Morador Novo? Cadastre-se</span>
+          <span class="text-white">Já tem conta? Fazer Login</span>
           <div class="d-flex">
             <v-btn
               rounded="xl"
               flat
               size="large"
+              to="/login"
             >
-              Cadastre-se
+              Login
             </v-btn>
           </div>
         </div>

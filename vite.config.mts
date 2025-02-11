@@ -78,4 +78,7 @@ export default defineConfig({
       },
     },
   },
+  optimizeDeps: {
+    include: ['vue-chart-3', 'chart.js'],
+  },
 })

@@ -3,6 +3,22 @@
     fluid
     class="h-100 pa-0 "
   >
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      color="error"
+    >
+      {{ errorText }}
+
+      <template #actions>
+        <v-btn
+          variant="text"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
     <v-row
       class="h-100 "
       no-gutters
@@ -92,7 +108,10 @@
           <h1 class="text-center text-h3 font-weight-bold">
             Login Morador
           </h1>
-          <div class="d-flex flex-column pa-3">
+          <div
+            class="d-flex flex-column pa-3"
+            @keyup.enter="onSubmit"
+          >
             <v-text-field 
               v-model="email"
               label="Email"
@@ -139,6 +158,7 @@
               rounded="xl"
               flat
               size="large"
+              to="/register"
             >
               Cadastre-se
             </v-btn>

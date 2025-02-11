@@ -1,0 +1,25 @@
+.amount-wrapper {
+  & > .chip-wrapper{
+    & > .chip {
+      &.success {
+        background-color: #4caf50; 
+        color: white;
+      }
+  
+      &.warning {
+        background-color: #ff9800; 
+        color: white;
+      }
+  
+      &.error {
+        background-color: #B00020;
+        color: white;
+      }
+
+      &.installment{
+        background-color: #0D47A1;
+        color: white;
+      }
+    }
+  }
+}
