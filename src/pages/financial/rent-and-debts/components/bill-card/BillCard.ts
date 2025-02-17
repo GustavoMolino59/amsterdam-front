@@ -14,6 +14,10 @@ export default defineComponent({
       type: Number,
       required: true
     },
+    diff: {
+      type: Number,
+      required: true
+    },
     status: {
       type: String,
       required: true
